@@ -2,10 +2,10 @@
 
 <project name="name-of-project" default="build">
  <target name="build"
-   depends="prepare,lint,pdepend,phpmd-ci,phpcs-ci,phpunit,phpcb"/>
+   depends="prepare,lint,pdepend,phpmd-ci,phpcs-ci,phpcb"/>
 
  <target name="build-parallel"
-   depends="prepare,lint,tools-parallel,phpunit,phpcb"/>
+   depends="prepare,lint,tools-parallel,phpcb"/>
 
  <target name="tools-parallel" description="Run tools in parallel">
   <parallel threadCount="2">
@@ -95,10 +95,7 @@
   </exec>
  </target>
  
-
- <target name="phpunit" description="Run unit tests with PHPUnit">
-  <exec executable="phpunit" failonerror="true"/>
- </target>
+ 
 
  <target name="phpcb" description="Aggregate tool output with PHP_CodeBrowser">
   <exec executable="phpcb">
